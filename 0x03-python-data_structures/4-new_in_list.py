@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def new_in_list(my_list, idx, element):
-    """Replace an element in a list at a specific position without modifying."""
+    """Replace element at a specific position without modifying main list"""
     if idx < 0:
         return my_list
     elif idx >= len(my_list):
