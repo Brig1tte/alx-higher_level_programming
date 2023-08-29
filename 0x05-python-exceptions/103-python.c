@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <Python.h>
 
+/**
+ * print_python_bytes - function to print basic info about python bytes
+ * @p: python object bytes
+ * Return: void
+ */
 void print_python_bytes(PyObject *p)
 {
 	PyBytesObject *bytes = (PyBytesObject *)p;
@@ -10,7 +15,7 @@ void print_python_bytes(PyObject *p)
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
 	{
-		printf(" [ERROR] Invalid Bytes Object\n");
+		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
 
@@ -20,24 +25,36 @@ void print_python_bytes(PyObject *p)
 
 	for (Py_ssize_t i = 0; i < size && i < 10; i++)
 	{
-		printf("  %02x", bytes->ob_sval[i] & 0xff);
+		printf(" %02x", bytes->ob_sval[i] & 0xff);
 	}
+
 	printf("\n");
 }
 
+/**
+ * print_python_float - function to print basic info about python float objects
+ * @p: python float object
+ * Return: void
+ */
 void print_python_float(PyObject *p)
 {
 	double val = PyFloat_AsDouble(p);
 
-	printf("[.] float object infor\n");
+	printf("[.] float object info\n");
 	if (!PyFloat_Check(p))
 	{
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	printf("  value:%f\n", val);
+
+	printf("  value: %f\n", val);
 }
 
+/**
+ * print_python_list - function to print basic info about python lists
+ * @p: python object lists
+ * Return: void
+ */
 void print_python_list(PyObject *p)
 {
 	PyListObject *list = (PyListObject *)p;
