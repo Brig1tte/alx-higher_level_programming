@@ -25,30 +25,23 @@
 
 
 class Student:
-    """ class function to create a dict obj """
+    """ class function to create a dict obj / rep of a student """
 
     def __init__(self, first_name, last_name, age):
         """ function initialization for Student object """
-        self.last_name = last_name
         self.first_name = first_name
+        self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """ function retrieves a dictionary representation of obj attrs"""
-        dic = {}
-        if type(attrs) != list:
+        """ function retrieves a dictionary representation of obj attrs """
+        if attrs is None or not isinstance(attrs, list):
             return self.__dict__
         else:
-            for item in attrs:
-                if type(item) != str:
-                    return self.__dict__
-            for key in self.__dict__:
-                if key in attrs:
-                    dic[key] = self.__dict__[key]
-        return dic
+            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+
 
     def reload_from_json(self, json):
-        """ function replaces all attrs of an instance given json obj """
-        for key in json:
-            if key in self.__dict__:
-                self.__dict__[key] = json[key]
+        """ function replaces all attrs of the student instance given json obj """
+        for key, value in json.items():
+            setattr(self, key, value)

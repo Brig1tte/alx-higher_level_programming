@@ -12,22 +12,18 @@
 """
 
 
-import json
-import sys
-load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
-save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
+from sys import argv
+save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
-arg = sys.argv[1:]
-file_name = "add_item.json"
+filename = "add_item.json"
 
-try:
-    python_object = load_from_json_file(file_name)
-except FileNotFoundError:
-    save_to_json_file([], file_name)
+if not exists(filename) or not isfile(filename):
+    json_list = []
+else:
+    json_list = load_from_json_file(filename)
 
-python_object = load_from_json_file(file_name)
-if type(python_object) is list:
-    for item in arg:
-        python_object.append(item)
+for arg in argv[1:]:
+    json_list.append(arg)
 
-save_to_json_file(python_object, file_name)
+save_to_json_file(json_list, filename)
