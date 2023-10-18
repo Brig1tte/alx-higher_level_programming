@@ -1,4 +1,4 @@
---A Script to insert a new row in the first_table (database hbtn_0c_0) in MySQL server
+-- A Script to insert a new row in the first_table (database hbtn_0c_0) in MySQL server
 -- New row:
 --     id = 89
 --     name = Best school

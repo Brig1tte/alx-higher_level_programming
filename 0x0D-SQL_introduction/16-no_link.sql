@@ -1,4 +1,4 @@
--- Script which lists all records of second_table of the database hbtn_0c_0 in MySQL server.
+-- The Script which lists all records of second_table of the database hbtn_0c_0 in MySQL server
 -- Rows without a name value should not be listed
 -- Results display the score and the name (in this order)
 -- Records are listed by descending order of score

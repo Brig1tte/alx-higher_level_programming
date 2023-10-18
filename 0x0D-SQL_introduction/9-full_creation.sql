@@ -1,4 +1,4 @@
---A Script to create second_table in the database hbtn_0c_0 in MySQL server and add multiples rows
+-- A Script to create second_table in the database hbtn_0c_0 in MySQL server and add multiples rows
 -- second_table description:
 --              id INT
 --              name VARCHAR(256)
