@@ -19,4 +19,15 @@ module.exports = class Rectangle {
 			string = '';
 		}
 	}
+
+	rotate () {
+		const width = this.width;
+		this.width = this.height;
+		this.height = width;
+	}
+
+	double () {
+		this.width *= 2;
+		this.height *= 2;
+	}
 };
