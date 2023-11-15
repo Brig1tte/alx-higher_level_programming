@@ -1,15 +1,11 @@
 #!/usr/bin/node
 // a class Rectangle that defines a rectangle:
-class Rectangle {
-	constructor(h, w) {
-		this.height = h;
-		this.width = w;
+module.exports = class Rectangle {
+	constructor(h = 0, w = 0) {
+		if (h >= 0 || w >= 0) {
+		} else {
+			this.height = h;
+			this.width = w;
+		}
 	}
-}
-
-if (w >= 0 || h >= 0) {
-		const rectangle = {};
-	}
-}
-
-module.exports = Rectangle
+};
