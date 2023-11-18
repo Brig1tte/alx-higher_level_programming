@@ -1,20 +1,21 @@
 #!/usr/bin/node
 // a class Rectangle that defines a rectangle:
 class Rectangle {
-  constructor(w, h) {
-    if (h > 0 || w > 0) {
-      this.height = h;
+  constructor (w, h) {
+    if (w > 0 && h > 0) {
       this.width = w;
+      this.height = h;
     }
   }
 
   print () {
-    let string = '';
     for (let j = 0; j < this.height; j++) {
+      let string = '';
       for (let p = 0; p < this.width; p++) {
 	string += 'X';
       }
       console.log(string);
+      sting = '';
     }
   }
 

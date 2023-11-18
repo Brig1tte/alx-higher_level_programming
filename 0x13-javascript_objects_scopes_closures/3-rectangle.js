@@ -9,8 +9,8 @@ class Rectangle {
   }
 
   print () {
-    let string = '';
     for (let j = 0; j < this.height; j++) {
+      let string = '';
       for (let p = 0; p < this.width; p++) {
 	string += 'X';
       }
