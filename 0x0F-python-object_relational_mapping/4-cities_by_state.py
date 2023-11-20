@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" A script to list all cities of the database hbtn_0e_4_usa, ordered by city id """
+""" A script to list all cities of the database hbtn_0e_4_usa """
 import sys
 import MySQLdb
 
