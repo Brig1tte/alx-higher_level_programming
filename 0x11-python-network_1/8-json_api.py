@@ -7,10 +7,10 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        k = ""
+        q = ""
     else:
-        k = sys.argv[1]
-    data = {'k': k}
+        q = sys.argv[1]
+    data = {'q': q}
     re = requests.post("http://0.0.0.0:5000/search_user", data=data)
     try:
         if not p.json():

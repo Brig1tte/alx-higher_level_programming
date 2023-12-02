@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ A Python script to print html status error """
-
 import urllib.request
 import sys
 
